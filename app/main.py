@@ -8,7 +8,7 @@ from app.routers import products
 from app.routers import cart
 from app.routers import orders
 
-Base.metadata.create_all(bind=engine)
+#Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
     title="E-Commerce Backend"

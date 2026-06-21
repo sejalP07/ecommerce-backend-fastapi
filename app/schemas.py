@@ -22,7 +22,7 @@ class UserResponse(BaseModel):
     email: EmailStr
 
     class Config:
-        from_attributes = True
+        orm_mode = True
 
 
 # ======================
@@ -44,7 +44,7 @@ class ProductResponse(BaseModel):
     stock: int
 
     class Config:
-        from_attributes = True
+        orm_mode = True
 
 
 class ProductUpdate(BaseModel):
@@ -71,7 +71,7 @@ class CartResponse(BaseModel):
     quantity: int
 
     class Config:
-        from_attributes = True
+        orm_mode = True
 
 
 # ======================
