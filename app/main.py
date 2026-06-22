@@ -1,14 +1,21 @@
 from fastapi import FastAPI
+import time
 
 from app.database import engine
-from app.models import Base
+from app.database import Base
+
+from app import models
 
 from app.routers import users
 from app.routers import products
 from app.routers import cart
 from app.routers import orders
 
-#Base.metadata.create_all(bind=engine)
+# Wait for PostgreSQL container to start
+time.sleep(15)
+
+# Create tables
+Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
     title="E-Commerce Backend"
